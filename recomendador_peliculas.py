@@ -67,8 +67,14 @@ def similar_films(df):
 
     if len(data) == 0:
         print("We don't have the film you're looking for. Try another type of search")
-    
-    return data
+        return data
+
+    else:
+        genero = data['Genre'][0]
+        data_final = pd.DataFrame(columns = ["Title","Genre","Premiere","Runtime","IMDB Score","Language"])
+        data_final = aux(data,genero)
+
+    return data_final
 
 if __name__ == "__main__":
     # Cargo el DataFrame que voy a utilizar
@@ -83,7 +89,7 @@ if __name__ == "__main__":
     while opcion != False:
 
         if opcion == "1":
-            
+
             data = search_by_genre(df_peliculas)
             print(data.head(10) if len(data) != 0 else "We couldn't find any films from that genre")
 
