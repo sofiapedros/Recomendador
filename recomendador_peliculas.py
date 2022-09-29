@@ -75,6 +75,8 @@ def similar_films(df):
         data_final = pd.DataFrame(columns = ["Title","Genre","Premiere","Runtime","IMDB Score","Language"])
         data_final = aux(data,genero)
         if len(data_final) == 1:
+            # Si solo existe una película con ese género, te devuelve todas las que había encontrado al principio
+            # Esto ocurre si la película tiene más de un género
             return data
 
     return data_final
