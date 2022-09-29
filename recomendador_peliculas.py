@@ -109,7 +109,8 @@ if __name__ == "__main__":
             if len(data) != 0:
                 print("Try watching: ")
                 print(data.head(10))
-
+        else:
+            print("Select a valid type search")
         print("")
         opcion = choose_search_type()
 
