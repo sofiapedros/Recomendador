@@ -83,15 +83,17 @@ if __name__ == "__main__":
     while opcion != False:
 
         if opcion == "1":
+            
             data = search_by_genre(df_peliculas)
             print(data.head(10) if len(data) != 0 else "We couldn't find any films from that genre")
 
         elif opcion == "2":
+
             data = search_by_language(df_peliculas)
-   
             print(data.head(10) if len(data)!= 0 else "We couldn't find any films in that language")
 
         elif opcion == "3":
+
             data = similar_films(df_peliculas)
             if len(data) != 0:
                 print("Try watching: ")
