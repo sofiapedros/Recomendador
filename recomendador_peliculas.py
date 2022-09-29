@@ -3,8 +3,8 @@ import re
 
 def choose_search_type():
 
-    print(" 1. Search by genre\n 2. Search by Language\n 3. Search by similar films")
-    opciones = ["1","2","3"]
+    print(" 1. Search by genre\n 2. Search by language\n 3. Search by similar films")
+    opciones = ["1","2","3","genre","language","film"]
     opcion = input("Choose your search settings or press ENTER to exit: ",)
 
     if opcion in opciones:
@@ -93,17 +93,17 @@ if __name__ == "__main__":
     opcion = choose_search_type()
     while opcion != False:
 
-        if opcion == "1":
+        if opcion == "1" or opcion == "genre":
 
             data = search_by_genre(df_peliculas)
             print(data.head(10) if len(data) != 0 else "We couldn't find any films from that genre")
 
-        elif opcion == "2":
+        elif opcion == "2" or opcion == "language":
 
             data = search_by_language(df_peliculas)
             print(data.head(10) if len(data)!= 0 else "We couldn't find any films in that language")
 
-        elif opcion == "3":
+        elif opcion == "3" or opcion == "film":
 
             data = similar_films(df_peliculas)
             if len(data) != 0:
