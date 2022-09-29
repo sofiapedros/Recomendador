@@ -6,7 +6,6 @@ def choose_search_type():
     print(" 1. Search by genre\n 2. Search by language\n 3. Search by similar films")
     opciones = ["1","2","3","genre","language","film"]
     opcion = input("Choose your search settings or press ENTER to exit: ",)
-
     if opcion in opciones:
         return opcion
 
