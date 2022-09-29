@@ -71,8 +71,11 @@ def similar_films(df):
 
     else:
         genero = data['Genre'][0]
+
         data_final = pd.DataFrame(columns = ["Title","Genre","Premiere","Runtime","IMDB Score","Language"])
         data_final = aux(data,genero)
+        if len(data_final) == 1:
+            return data
 
     return data_final
 
