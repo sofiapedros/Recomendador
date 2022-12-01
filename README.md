@@ -16,7 +16,7 @@ En cada búsqueda, devuelve un máximo de 10 películas en forma de dataframe co
 
 Si se introduce un género al buscar por idioma o viceversa, sigue recomendando películas de ese género o idioma, pero advierte al usuario de que ese no es un idioma (o un género, dependiendo del caso) 
 
-Para su correcto funcionamiento, se ejecuta el programa .py y se solicita al usuario que seleccione un tipo de búsqueda de las opciones dadas por teclado (solicita una opción hasta que la opción dada sea válida). Después, se debe introducir el título de la película que se desea buscar. Se pueden hacer tantas búsquedas cómo se deseen y para salir se debe pulsar ENTER. 
+Para su correcto funcionamiento, se ejecuta el programa .py y se solicita al usuario que seleccione un tipo de búsqueda de las opciones dadas por teclado (solicita una opción hasta que la opción dada sea válida). Después, se debe introducir el título de la película que se desea buscar. Se pueden hacer tantas búsquedas cómo se deseen y para salir se debe pulsar ENTER. Además, se controla la señal de control + C (SIGINT) y con salida con código 1 y un mensaje adecuado. 
 
 ### requirements.txt
 Fichero de texto con las librerías utilizadas para que el usuario se las pueda descargar con pip install -r requirements.txt
