@@ -1,5 +1,7 @@
 import pandas as pd
 import re
+import signal 
+import sys 
 
 def choose_search_type():
     # Selecciona una opción de entre las posibles
@@ -91,7 +93,19 @@ def similar_films(df):
 
     return data_final
 
+
+def handler_signal(signal, frame):
+    '''
+    Función que maneja la señal SIGINT (CTRL + C)
+    '''
+    # Imprime un mensaje y sale del programa
+    print("\n\n[!] Out ............. \n")
+    sys.exit(1)
+
 if __name__ == "__main__":
+
+    signal.signal(signal.SIGINT, handler_signal)
+
     # Cargo el DataFrame que voy a utilizar
     df_peliculas = pd.read_csv('NetflixOriginals.csv',sep=",",encoding="LATIN_1")
 
